@@ -16,12 +16,6 @@ Page {
     property var lmodel: ListModel {     }
     property alias color: field_algo.color
     property bool iscrossed: false
-    onIscrossedChanged: {
-        console.log("+++")
-        console.log(crosspoint.x)
-        console.log(crosspoint.y)
-    }
-
     property point crosspoint: Qt.point(30, 30)
     property bool dragpoint: true
     signal editUpdate(int _idx);
