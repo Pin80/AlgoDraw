@@ -1,5 +1,5 @@
 # AlgoDraw
-![alt text](https://github.com/Pin80/DatasetNavigator2/blob/main/demo.png?raw=true)
+![alt text](https://github.com/Pin80/AlgoDraw/blob/main/demo.png?raw=true)
 это небольшая программа для визуализации некоторых алгоритмов вычислительной геометрии
 Написана на c++,Использует QML, zeroMQ   
 Приложение кроссплатформенное(по идеи), но проверено только под Linux. 
