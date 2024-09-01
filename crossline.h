@@ -8,7 +8,6 @@
 #include <QVariant>
 #include <QVector3D>
 
-
 class TCrossline: public QObject
 {
     Q_OBJECT

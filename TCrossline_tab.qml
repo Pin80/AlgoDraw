@@ -16,7 +16,13 @@ Page {
     property var lmodel: ListModel {     }
     property alias color: field_algo.color
     property bool iscrossed: false
-    //property point crosspt: []
+    onIscrossedChanged: {
+        console.log("+++")
+        console.log(crosspoint.x)
+        console.log(crosspoint.y)
+    }
+
+    property point crosspoint: Qt.point(30, 30)
     property bool dragpoint: true
     signal editUpdate(int _idx);
     Rectangle {
@@ -131,6 +137,17 @@ Page {
         }
         Repeater {
             model: page_algo.lmodel
+        }
+        Rectangle {
+                id: crossrect
+                x:  iscrossed?crosspoint.x - width/2:0
+                y:  iscrossed?crosspoint.y - height/2:0
+                width: 15
+                height: width
+                color: "red"
+                border.width: 2
+                visible: iscrossed
+                border.color: "black"
         }
         MouseArea {
             anchors.fill: parent

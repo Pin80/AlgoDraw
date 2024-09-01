@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>TEditCrdPanel.qml</file>
+        <file>Tarc_tab.qml</file>
+        <file>Tdefault.qml</file>
+        <file>TMainPanel.qml</file>
+        <file>Thull_tab.qml</file>
+        <file>TCrossline_tab.qml</file>
+        <file>TButton.qml</file>
+        <file>TEdit.qml</file>
+        <file>TComboBox.qml</file>
+    </qresource>
+</RCC>

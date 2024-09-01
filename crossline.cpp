@@ -30,7 +30,10 @@ void TCrossline::testCrossed(const QVariant &_ptlist)
         return;
     are_crossing(pt1, pt2, pt3, pt4);
     emit crossedChanged();
-    emit crossedptChanged();
+    if (m_iscrossed)
+    {
+        emit crossedptChanged();
+    }
 }
 
 void TCrossline::are_crossing(const QPointF &v11,
@@ -38,13 +41,12 @@ void TCrossline::are_crossing(const QPointF &v11,
                               const QPointF &v21,
                               const QPointF &v22)
 {
-   QVector3D cut1(v12-v11), cut2(v22-v21); //cut1(v12-v11), cut2(v22-v21);
-   QVector3D cut3(v21-v11), cut4(v22-v11);
+   QVector3D cut1(v12-v11), cut2(v22-v21);
+   QVector3D cut3(v21-v11), cut4(v22-v11);    m_point.setX(100);
+   m_point.setY(100);
    QVector3D cut5(v11-v21), cut6(v12-v21);
    QVector3D prod1, prod2;
    m_iscrossed = false;
-   //prod1 = cross(cut1 * (v21-v11));
-   //prod2 = cross(cut1 * (v22-v11));
    prod1 = QVector3D::crossProduct(cut1, cut3);
    prod2 = QVector3D::crossProduct(cut1, cut4);
 
@@ -52,8 +54,6 @@ void TCrossline::are_crossing(const QPointF &v11,
         (prod1.z() == 0) || prod2.z() == 0)
        return;
 
-   //prod1 = cross(cut2 * (v11-v21));
-   //prod2 = cross(cut2 * (v12-v21));
    prod1 = QVector3D::crossProduct(cut2, cut5);
    prod2 = QVector3D::crossProduct(cut2, cut6);
 

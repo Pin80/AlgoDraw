@@ -191,6 +191,9 @@ ApplicationWindow {
                                              iscrossed: Qt.binding(function() {
                                                            return crossline.iscrossed
                                                        }),
+                                             crosspoint: Qt.binding(function() {
+                                                            return crossline.crosspt
+                                             }),
                                              lmodel:   Qt.binding(function() {
                                                                 return mainlistmodel
                                                                })
@@ -206,7 +209,10 @@ ApplicationWindow {
                                            { color: "lightgreen",
                                              iscrossed: Qt.binding(function() {
                                                          return crossline.iscrossed
-                                                     }),
+                                             }),
+                                             crosspoint: Qt.binding(function() {
+                                                            return crossline.crosspt
+                                             }),
                                              lmodel:   Qt.binding(function() {
                                                                 return mainlistmodel
                                                                })
